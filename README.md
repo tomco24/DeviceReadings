@@ -24,15 +24,15 @@ Before running the project, make sure you have the following installed:
 
 1. Clone this repository to your local machine using the following command:
 
-   ```
-   git clone https://github.com/your-username/DeviceReadings.git
-   ```
+```
+git clone https://github.com/your-username/DeviceReadings.git
+```
 
 2. Navigate to the project's root directory:
 
-   ```
-   cd DeviceReadings
-   ```
+```
+cd DeviceReadings
+```
 
 
 3. To build the project, use the following command:
