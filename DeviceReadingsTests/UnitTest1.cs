@@ -8,7 +8,6 @@ namespace DeviceReadingsTests
         public CancellationTokenSource cts;
         public CancellationTokenSource cts_main;
 
-
         [TestInitialize]
         public void Initialize()
         {

@@ -6,9 +6,14 @@ namespace DeviceReadings
     {
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
-        private BlockingCollection<DeviceMessage> _queue = new BlockingCollection<DeviceMessage>();
-        private Dictionary<uint, int> _receivedCounts = new Dictionary<uint, int>();
+        /// The queue of device messages.        
+        private BlockingCollection<DeviceMessage> _queue;
 
+       
+        // A dictionary of the number of messages received from each device.
+        private Dictionary<uint, int> _receivedCounts;
+
+        
         private int _totalReceived;
         public int TotalReceived { get => _totalReceived; }
         public BlockingCollection<DeviceMessage> Queue { get => _queue; }
@@ -17,11 +22,11 @@ namespace DeviceReadings
         public DeviceMonitor()
         {
             _totalReceived = 0;
+            _queue = new BlockingCollection<DeviceMessage>();
+            _receivedCounts = new Dictionary<uint, int>();
 
         }
-
-
-
+        /// Starts a task that monitors the queue.
         public Task Run(CancellationToken cancellationToken)
         {
             return Task.Run(() =>

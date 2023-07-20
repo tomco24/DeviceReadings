@@ -31,7 +31,7 @@ namespace DeviceReadings
                     try
                     {
                         Produce(queue);
-                        int delay = random.Next(1, 6) * 1000;
+                        int delay = random.Next(1, 10) * 1000;
                         await Task.Delay(delay, cancellationToken);
                     }
                     catch (Exception ex)
